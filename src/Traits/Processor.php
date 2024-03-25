@@ -3,7 +3,10 @@
 namespace Rmunate\Utilities\Traits;
 
 use NumberFormatter;
+use Rmunate\Utilities\Exceptions\SpellNumberExceptions;
 use Rmunate\Utilities\Miscellaneous\Utilities;
+use Rmunate\Utilities\Miscellaneous\Words;
+use Rmunate\Utilities\Wrappers\NumberFormatterWrapper;
 
 trait Processor
 {
@@ -32,7 +35,7 @@ trait Processor
         $value = Words::replaceFromConfig($value, $this->locale);
         $value = Words::replaceCustom($value, $this->replacements);
 
-        return $formatter;
+        return $value;
     }
 
     /**
@@ -47,9 +50,6 @@ trait Processor
             ["integer", "double"],
             'To convert to letters numbers, an integer value is required as input.'
         );
-
-        // Text format
-        $formatter = NumberFormatterWrapper::format($this->value, $this->locale);
 
         $numberFormatter = new NumberFormatter($this->locale, NumberFormatter::SPELLOUT);
         $formatter = $numberFormatter->format($this->value);

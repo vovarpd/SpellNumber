@@ -2,6 +2,8 @@
 
 namespace Rmunate\Utilities\Bases;
 
+use Rmunate\Utilities\Validator\SpellNumberValidator;
+
 abstract class BaseSpellNumberValidator
 {
     /**

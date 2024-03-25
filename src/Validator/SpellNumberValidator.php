@@ -2,6 +2,7 @@
 
 namespace Rmunate\Utilities\Validator;
 
+use Rmunate\Utilities\Bases\BaseSpellNumberValidator;
 use Rmunate\Utilities\Exceptions\SpellNumberExceptions;
 use Rmunate\Utilities\Miscellaneous\Utilities;
 
@@ -160,7 +161,7 @@ class SpellNumberValidator extends BaseSpellNumberValidator
      *
      * @param string $date The date string to validate.
      *
-     * @throws InvalidArgumentException If the date is not in the expected format.
+     * @throws \InvalidArgumentException If the date is not in the expected format.
      */
     function date(string $date)
     {
